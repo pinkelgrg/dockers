@@ -1,0 +1,7 @@
+mysql:
+  image: mysql:8.0.0
+  environment:
+   - MYSQL_ROOT_PASSWORD=5140Manilla
+   - MYSQL_DATABASE=5140Manilla
+  ports:
+    - "3306:3306"
