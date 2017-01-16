@@ -5,3 +5,5 @@ mysql:
    - MYSQL_DATABASE=5140Manilla
   ports:
     - "3306:3306"
+  volumes:
+    - ./../DockerData/setupDB.sql:/docker-entrypoint-initdb.d/sample-setup.sql
