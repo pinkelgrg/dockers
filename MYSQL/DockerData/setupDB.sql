@@ -12,7 +12,7 @@ CREATE TABLE login (
 
 INSERT INTO login (username, password,created_timestamp) VALUES ('pinkelgrg','changeMe', NOW());
 
-
-use mysql;
+DROP USER IF EXISTS 'appuser'@'%';
 CREATE USER IF NOT EXISTS 'appuser'@'%' IDENTIFIED BY '5140Manilla';
-GRANT SELECT, INSERT, UPDATE on 5140Manilla.login TO 'appuser'@'%';
+GRANT USAGE, SELECT, INSERT, UPDATE on 5140Manilla.* TO 'appuser'@'%';
+FLUSH PRIVILEGES;
