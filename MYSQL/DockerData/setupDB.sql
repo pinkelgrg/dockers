@@ -14,5 +14,5 @@ INSERT INTO login (username, password,created_timestamp) VALUES ('pinkelgrg','ch
 
 
 use mysql;
-CREATE USER IF NOT EXISTS 'appuser' IDENTIFIED BY '5140Manilla';
-GRANT INSERT, UPDATE on 5140Manilla.login TO appuser;
+CREATE USER IF NOT EXISTS 'appuser'@'%' IDENTIFIED BY '5140Manilla';
+GRANT SELECT, INSERT, UPDATE on 5140Manilla.login TO 'appuser'@'%';
