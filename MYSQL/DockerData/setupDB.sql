@@ -1,6 +1,8 @@
+DROP DATABASE IF EXISTS 5140Manilla;
+CREATE DATABASE IF NOT EXISTS 5140Manilla;
 USE 5140Manilla;
-DROP TABLE IF EXISTS login;
-CREATE TABLE login (
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
   id bigint(20) NOT NULL AUTO_INCREMENT,
   username varchar(50) NOT NULL,
   password varchar(150) NOT NULL,
@@ -10,9 +12,9 @@ CREATE TABLE login (
   UNIQUE KEY username (username)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO login (username, password,created_timestamp) VALUES ('pinkelgrg','changeMe', NOW());
+INSERT INTO users (username, password,created_timestamp) VALUES ('pinkelgrg','changeMe', NOW());
 
-DROP USER IF EXISTS 'appuser'@'%';
+use mysql;
 CREATE USER IF NOT EXISTS 'appuser'@'%' IDENTIFIED BY '5140Manilla';
-GRANT USAGE, SELECT, INSERT, UPDATE on 5140Manilla.* TO 'appuser'@'%';
+GRANT SELECT, INSERT, UPDATE on 5140Manilla.* TO 'appuser'@'%';
 FLUSH PRIVILEGES;
