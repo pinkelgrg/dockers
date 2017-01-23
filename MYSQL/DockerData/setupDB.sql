@@ -12,7 +12,8 @@ CREATE TABLE users (
   UNIQUE KEY username (username)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO users (username, password,created_timestamp) VALUES ('pinkelgrg','changeMe', NOW());
+-- password: changeMe
+INSERT INTO users (username, password,created_timestamp) VALUES ('pinkelgrg','$2a$10$XjP8VOe5SkJzELOHBmI7u./FTuI23POI9BBTFco0taLObfagrBwCG', NOW());
 
 use mysql;
 CREATE USER IF NOT EXISTS 'appuser'@'%' IDENTIFIED BY '5140Manilla';
